@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.yoozoo.ptools</groupId>
+  <artifactId>dc-flash-prestoudf</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>dc-flash-prestoudf</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies> 
+	<dependency>
+	  <groupId>com.facebook.presto</groupId>
+	  <artifactId>presto-main</artifactId>
+	  <version>0.187</version>
+	    <scope>system</scope>
+	    <systemPath>${project.basedir}/presto-main-0.187.jar</systemPath>
+	</dependency>
+	<dependency>
+	 <groupId>com.facebook.presto</groupId>
+	 <artifactId>presto-spi</artifactId>
+	 <version>0.187</version>
+	    <scope>system</scope>
+	    <systemPath>${project.basedir}/presto-spi-0.187.jar</systemPath>
+	</dependency>
+	<dependency>
+	  <groupId>io.airlift.slice</groupId>
+	  <artifactId>slice</artifactId>
+	  <version>0.29</version>
+	    <scope>system</scope>
+	    <systemPath>${project.basedir}/prestoudf/slice-0.29.jar</systemPath>
+	</dependency>
+	<dependency>
+	  <groupId>google-collections</groupId>
+	  <artifactId>google-collections</artifactId>
+	  <version>1.0</version>
+	    <scope>system</scope>
+	    <systemPath>${project.basedir}/prestoudf/google-collections-1.0.jar</systemPath>
+	</dependency>	
+	<dependency>
+	  <groupId>commons-lang</groupId>
+	  <artifactId>commons-lang</artifactId>
+	  <version>2.6</version>
+	</dependency>	 
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+	<dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>fastjson</artifactId>
+		<version>1.2.12</version>
+	</dependency>
+     <dependency>
+         <groupId>redis.clients</groupId>
+         <artifactId>jedis</artifactId>
+         <version>2.9.0</version>
+     </dependency>	    
+  </dependencies>
+  <build>
+    <plugins>
+	    <plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-compiler-plugin</artifactId>
+		    <version>3.2</version>
+		    <configuration>
+		        <source>1.8</source>
+		        <target>1.8</target>
+		    </configuration>
+		</plugin>
+		<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.6</version>
+        </plugin>
+  	</plugins>
+  </build>  
+</project>
